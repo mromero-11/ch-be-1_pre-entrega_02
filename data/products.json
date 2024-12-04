@@ -8,5 +8,15 @@
     "price": 79.99,
     "stock": 30,
     "status": true
+  },
+  {
+    "id": "f3b6e564-0387-42a8-be4b-6540d6db45b4",
+    "code": "PROD003",
+    "title": "Mechanical Keyboard",
+    "description": "A durable mechanical keyboard with RGB lighting.",
+    "category": "Accessories",
+    "price": 79.99,
+    "stock": 30,
+    "status": true
   }
 ]
