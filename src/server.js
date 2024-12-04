@@ -1,6 +1,9 @@
 import express from 'express';
+import handlebars from 'express-handlebars';
 import productsRoutes from './routes/products.routes.js';
 import cartsRoutes from './routes/carts.routes.js';
+import viewsRoutes from './routes/views.routes.js';
+import __dirname from './utils.js';
 
 //  server
 const app = express();
@@ -9,14 +12,28 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//  handlebars settings
+app.engine("handlebars", handlebars.engine())
+app.set('views', __dirname + '/views')
+app.set('view engine', 'handlebars')
+
+//  routes
+app.use('/api/products', productsRoutes)
+app.use('/api/carts', cartsRoutes)
+app.use('/products', viewsRoutes)
+
 //  test
 app.get('/ping', (req, res) => {
     res.send('pong');
 })
 
-//  routes
-app.use('/api/products', productsRoutes)
-app.use('/api/carts', cartsRoutes)
+//  test
+app.get('/ping-handlebars', (req, res) => {
+    let ping = {
+        msg: "pong"
+    }
+    res.render("test", ping);
+})
 
 //  set port & run server
 const PORT = 8080;

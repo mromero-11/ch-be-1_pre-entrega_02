@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "50ae5ee9-333b-48a8-93f8-2afe5b9de48b",
+    "code": "PROD002",
+    "title": "Mechanical Keyboard",
+    "description": "A durable mechanical keyboard with RGB lighting.",
+    "category": "Accessories",
+    "price": 79.99,
+    "stock": 30,
+    "status": true
+  }
+]
